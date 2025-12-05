@@ -304,7 +304,7 @@ Below are the patterns for each European country, along with a brief description
 
 #### Germany
 ##### Phone Number
-- **Pattern:** `^\+49[1-9][0-9]{1,14}$`
+- **Pattern:** `^\+49[1-9][0-9]{8,14}$`
 - **Description:** Matches German phone numbers. Begins with +49 and is followed by 9 to 15 digits.
 ##### Postal Code
 - **Pattern:** `^\d{5}$`
@@ -503,11 +503,13 @@ Below are the patterns for each European country, along with a brief description
 
 #### Netherlands
 ##### Phone Number
-- **Pattern:** `^\+31[0-9]{9}$`
+- **Pattern:** `^\+31[1-9][0-9]{8}$`
 - **Description:** Matches Dutch phone numbers. Begins with +31 and is followed by 9 digits.
 ##### Postal Code
 - **Pattern:** `^[1-9][0-9]{3}\s?[A-Z]{2}$`
 - **Description:** Matches Dutch postal codes, which consist of four digits followed by two letters.
+- **Pattern extended:** `/^(?:[1-9]\d{3} ?(?:[A-EGHJ-NPRTVWXZ][A-EGHJ-NPRSTVWXZ]|S[BCEGHJ-NPRTVWXZ]))$/i`
+- **Description:** Postal codes of the form 'DDDD LL'. Unused letters are 'F', 'I', 'O', 'Q', 'U' and 'Y'. Unused combinations are 'SA', 'SD' and 'SS'.
 ##### VAT Number
 - **Pattern:** `^NL\d{9}B\d{2}$`
 - **Description:** Dutch VAT numbers start with "NL", followed by 9 digits, "B", and 2 more digits.
